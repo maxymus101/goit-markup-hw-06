@@ -1,3 +1,4 @@
-# goit-markup-hw-05
+# goit-markup-hw-06
 
-Creating modal window. Add input fields.
+Use adaptive design aproaches to make site for mobile and tablet devices.
+
