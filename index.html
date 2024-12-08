@@ -437,7 +437,7 @@
       </div>
     </div>
   </footer>
-  <div class="modal-overlay">
+  <div class="modal-overlay is-open">
     <div class="modal">
       <button class="close-btn" type="button">
         <svg class="icon close-icon" width="8" height="8">
@@ -486,14 +486,18 @@
                 <use href="./images/icons.svg#icon-check-mark"></use>
               </svg>
             </span>
-            I accept the terms and conditions of the
-            <a href="#" class="privacy-policy">Privacy Policy</a>
+            <div class="checkbox-text-wrapp">
+              <span class="checkbox-text">I accept the terms and conditions of the</span>
+              <a href="#" class="privacy-policy">Privacy Policy</a>
+            </div>
+
           </label>
         </div>
         <button class="modal-btn" type="submit" name="send-form">Send</button>
       </form>
     </div>
   </div>
+
   <div class="mobile-menu">
     <button class="menu-close-btn" type="button">
       <svg class="icon menu-icon" width="8" height="8">
@@ -555,7 +559,6 @@
         </li>
       </ul>
     </div>
-
   </div>
 </body>
 
