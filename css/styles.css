@@ -1289,6 +1289,9 @@ input[type="checkbox"]:checked+.modal-form-agreement-text>.modal-form-checkbox>.
 /* Mobile menu */
 
 .mobile-menu {
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   min-height: 100%;
   top: 0;
@@ -1363,7 +1366,7 @@ input[type="checkbox"]:checked+.modal-form-agreement-text>.modal-form-checkbox>.
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 48px;
+  `
 }
 
 .mob-address-link {
@@ -1389,8 +1392,3 @@ input[type="checkbox"]:checked+.modal-form-agreement-text>.modal-form-checkbox>.
   align-items: center;
   gap: 40px;
 }
-
-/* .mob-menu-socials > li {
-  background-color: ;
-
-} */
