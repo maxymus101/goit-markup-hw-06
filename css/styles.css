@@ -36,6 +36,8 @@ p {
 
 img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 input {
@@ -64,25 +66,27 @@ button {
 }
 
 .container {
-  min-width: 320px;
-  max-width: 1158px;
   padding-left: 15px;
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    min-width: 320px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157px) {
   .container {
     width: 768px;
-    padding-left: 16px;
-    padding-right: 16px;
   }
 }
 
 @media screen and (min-width: 1158px) {
   .container {
-    width: 1158px;
+    min-width: 1158px;
   }
 }
 
@@ -93,13 +97,11 @@ button {
   align-items: center;
 }
 
-/* @media screen and (min-width: 320px) and (max-width: 767px) {
-    .header-container {
-        display: block;
-        margin-right: 149px;
-
-    }
-} */
+@media only screen and (min-width: 768px) {
+  .header-container {
+    justify-content: center;
+  }
+}
 
 .header-logo {
   font-family: "Raleway", sans-serif;
@@ -258,7 +260,7 @@ button {
   background-position: 50% 50%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
-  padding: 188px 0;
+  padding: 72px 0;
   margin: 0 auto;
 }
 
@@ -296,6 +298,7 @@ button {
 @media only screen and (min-width: 1158px) {
   .hero {
     max-width: 1440px;
+    padding: 188px 0;
     background-image: linear-gradient(to bottom,
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)),
@@ -394,7 +397,15 @@ button {
   }
 }
 
+@media only screen and (min-width: 1158px) {
+  .features-container {
+    width: 1128px;
+
+  }
+}
+
 .features-list {
+  max-width: 1128px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -406,6 +417,7 @@ button {
   .features-list {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     row-gap: 72px;
     column-gap: 24px;
   }
@@ -433,7 +445,8 @@ button {
 }
 
 .features-item {
-  flex-basis: calc((100% - 72px * 3) / 4);
+  flex-basis: calc((100% - 72px * 0) / 1);
+  max-width: 288px;
 }
 
 .features-item>.icon-wrapper {
@@ -447,7 +460,8 @@ button {
     justify-content: flex-start;
     align-items: flex-start;
 
-    flex-basis: calc((100% - 24px * 3) / 4);
+    flex-basis: calc((100% - 24px * 1) / 2);
+    max-width: 356px;
   }
 }
 
@@ -492,8 +506,6 @@ button {
   letter-spacing: 0.02em;
   color: #434455;
 
-  width: 288px;
-  /* width: 264px; */
 }
 
 @media only screen and (min-width: 1158px) {
@@ -509,15 +521,8 @@ button {
 .team {
   background-color: #f4f4fd;
 
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
-@media only screen and (min-width: 768px) {
-  .team {
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 @media only screen and (min-width: 1158px) {
@@ -525,6 +530,13 @@ button {
     padding-top: 120px;
     padding-bottom: 120px;
   }
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .team-title {
@@ -558,7 +570,6 @@ button {
 
 @media only screen and (min-width: 1158px) {
   .team-list {
-    justify-content: space-between;
     flex-wrap: nowrap;
     gap: 24px;
   }
@@ -571,14 +582,15 @@ button {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 
-  flex-basis: calc((100% - 72px * 3) / 4);
+  flex-basis: calc((100% - 72px * 0) / 1);
+  max-width: 264px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1158px) {
   .team-card {
     flex-basis: calc((100% - 24px * 3) / 4);
   }
@@ -645,19 +657,15 @@ button {
   padding-bottom: 96px;
 }
 
-@media only screen and (min-width: 1158px) {
-  .portfolio {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-
-  .portfolio-container {
-    padding-left: 0;
-    padding-right: 0;
-  }
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .portfolio-list {
+  max-width: 264px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -667,6 +675,7 @@ button {
 
 @media only screen and (min-width: 768px) {
   .portfolio-list {
+    max-width: 736px;
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 72px;
@@ -676,6 +685,7 @@ button {
 
 @media only screen and (min-width: 1158px) {
   .portfolio-list {
+    max-width: 1128px;
     row-gap: 48px;
     column-gap: 24px;
   }
@@ -688,7 +698,15 @@ button {
 
 @media only screen and (min-width: 768px) {
   .portfolio-item {
-    flex-basis: calc((100% - 24px * 5) / 6);
+    max-width: 356px;
+    flex-basis: calc((100% - 24px * 1) / 2);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .portfolio-item {
+    max-width: 360px;
+    flex-basis: calc((100% - 24px * 2) / 3);
   }
 }
 
@@ -785,6 +803,7 @@ button {
 }
 
 .footer-container {
+  width: 288px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -793,16 +812,17 @@ button {
 
 @media only screen and (min-width: 768px) {
   .footer-container {
+    width: 526px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: baseline;
-    padding-left: 92px;
   }
 }
 
 @media only screen and (min-width: 1158px) {
   .footer-container {
+    width: 1155px;
     flex-direction: row;
     flex-wrap: nowrap;
   }
@@ -859,6 +879,7 @@ button {
 @media only screen and (min-width: 1158px) {
   .social-wrapper {
     margin-right: 80px;
+    margin-bottom: 0;
   }
 }
 
@@ -870,6 +891,13 @@ button {
   color: #fff;
 
   margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .social-title {
+    display: flex;
+    align-self: flex-start;
+  }
 }
 
 .footer-social-list {
@@ -989,12 +1017,6 @@ button {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* @media only screen and (min-width: 768px) {
-  .modal-overlay {
-
-  }
-} */
-
 .modal-overlay.is-open {
   opacity: 1;
   visibility: visible;
@@ -1004,8 +1026,8 @@ button {
 .modal {
   background-color: #fcfcfc;
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 50%;
+  left: 50%;
   max-width: 288px;
   min-height: 623px;
 
@@ -1022,12 +1044,11 @@ button {
 
 @media only screen and (min-width: 768px) {
   .modal {
-    max-width: 408px;
+    min-width: 408px;
     min-height: 584px;
     top: 50%;
     left: 50%;
     padding: 72px 24px 24px 24px;
-
   }
 }
 
@@ -1079,6 +1100,12 @@ button {
 
   margin: 0 auto 16px;
   max-width: 256px;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal-title {
+    max-width: 360px;
+  }
 }
 
 .modal-form {
@@ -1198,6 +1225,12 @@ input[type="checkbox"]:checked+.modal-form-agreement-text>.modal-form-checkbox {
   width: 231px;
 }
 
+@media only screen and (min-width: 768px) {
+  .checkbox-text-wrapp {
+    width: 338px;
+  }
+}
+
 .checkbox-text {
   display: inline-flex;
 }
@@ -1222,7 +1255,12 @@ input[type="checkbox"]:checked+.modal-form-agreement-text>.modal-form-checkbox>.
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
+}
 
+@media only screen and (min-width: 768px) {
+  .modal-form-agreement-text {
+    align-items: baseline;
+  }
 }
 
 .privacy-policy {
@@ -1257,9 +1295,9 @@ input[type="checkbox"]:checked+.modal-form-agreement-text>.modal-form-checkbox>.
   left: 0;
 
   background-color: #fff;
-  position: absolute;
-  padding-top: 24px;
-  padding-right: 16px;
+  position: fixed;
+  padding-top: 72px;
+  padding-right: 24px;
   padding-bottom: 40px;
   padding-left: 16px;
 
@@ -1302,8 +1340,7 @@ input[type="checkbox"]:checked+.modal-form-agreement-text>.modal-form-checkbox>.
   justify-content: flex-start;
   align-items: flex-start;
   gap: 40px;
-  padding-top: 72px;
-  margin-bottom: 168px;
+  margin-bottom: auto;
 }
 
 .menu-link {
@@ -1316,6 +1353,10 @@ input[type="checkbox"]:checked+.modal-form-agreement-text>.modal-form-checkbox>.
 
 .menu-link.current {
   color: #404bbf;
+}
+
+.mob-address {
+  margin-bottom: 48px;
 }
 
 .mob-address-list {
